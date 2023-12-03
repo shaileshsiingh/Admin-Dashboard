@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 const SearchBar = ({ handleSearch }) => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState('')
 
   const handleInputChange = (e) => {
-    setSearchTerm(e.target.value);
+    setSearchTerm(e.target.value)
   };
 
   const handleSearchClick = () => {
-    handleSearch(searchTerm);
+    handleSearch(searchTerm)
   };
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
-      handleSearch(searchTerm);
+      handleSearch(searchTerm)
     }
   };
 
