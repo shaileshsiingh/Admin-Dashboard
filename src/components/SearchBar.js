@@ -22,11 +22,19 @@ const SearchBar = ({ handleSearch }) => {
 <input
         type="text"
         placeholder="Search..."
-        style={{ padding: '8px', marginRight: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
+        style={{
+          padding: '8px',
+          marginRight: '8px',
+          borderRadius: '4px',
+          border: '1px solid #ccc',
+          width: '200px',
+          fontSize: '14px',
+        }}
         value={searchTerm}
         onChange={handleInputChange}
         onKeyPress={handleKeyPress}
-      />      <button className="search-icon" onClick={handleSearchClick}>
+      />  
+        <button className="search-icon" onClick={handleSearchClick}>
         Search
       </button>
     </div>

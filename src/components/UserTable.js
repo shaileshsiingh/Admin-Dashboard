@@ -1,33 +1,33 @@
 import React from 'react';
-import UserRow from './UserRow';
+import UserRow from './UserRow'
 
 const UserTable = ({ users, handleEdit, handleDelete, selectedRows, setSelectedRows }) => {
   const toggleSelectAll = () => {
-    const allCurrentPageIds = users.map((user) => user.id);
-    const allSelected = allCurrentPageIds.every((id) => selectedRows.includes(id));
+    const allCurrentPageIds = users.map((user) => user.id)
+    const allSelected = allCurrentPageIds.every((id) => selectedRows.includes(id))
 
-    if (allSelected) {
-      const updatedSelectedRows = selectedRows.filter((id) => !allCurrentPageIds.includes(id));
-      setSelectedRows(updatedSelectedRows);
+    if(allSelected) {
+      const updatedSelectedRows = selectedRows.filter((id) => !allCurrentPageIds.includes(id))
+      setSelectedRows(updatedSelectedRows)
     } else {
-      const updatedSelectedRows = [...selectedRows, ...allCurrentPageIds.filter((id) => !selectedRows.includes(id))];
-      setSelectedRows(updatedSelectedRows);
+      const updatedSelectedRows = [...selectedRows, ...allCurrentPageIds.filter((id) => !selectedRows.includes(id))]
+      setSelectedRows(updatedSelectedRows)
     }
-  };
+  }
 
   const handleRowDelete = (userId) => {
-    const updatedSelectedRows = selectedRows.filter((id) => id !== userId);
-    setSelectedRows(updatedSelectedRows);
-    handleDelete(userId);
-  };
+    const updatedSelectedRows = selectedRows.filter((id) => id !== userId)
+    setSelectedRows(updatedSelectedRows)
+    handleDelete(userId)
+  }
 
   const handleSelectRow = (userId) => {
-    const isSelected = selectedRows.includes(userId);
+    const isSelected = selectedRows.includes(userId)
     if (isSelected) {
-      const updatedSelectedRows = selectedRows.filter((id) => id !== userId);
-      setSelectedRows(updatedSelectedRows);
+      const updatedSelectedRows = selectedRows.filter((id) => id !== userId)
+      setSelectedRows(updatedSelectedRows)
     } else {
-      setSelectedRows([...selectedRows, userId]);
+      setSelectedRows([...selectedRows, userId])
     }
   };
 
@@ -41,7 +41,6 @@ const UserTable = ({ users, handleEdit, handleDelete, selectedRows, setSelectedR
           <th>Name</th>
           <th>Email</th>
           <th>Role</th>
-          {/* Add other columns here */}
           <th>Actions</th>
         </tr>
       </thead>
